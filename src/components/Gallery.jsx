@@ -43,9 +43,8 @@ const GalleryItem = ({ image, index }) => {
             ref={ref}
             initial={{ opacity: 0, scale: 0.8 }}
             animate={inView ? { opacity: 1, scale: 1 } : {}}
-            transition={{ duration: 0.6, delay: index * 0.1 }}
-            whileHover={{ scale: 1.05, y: -10 }}
-            className="group relative overflow-hidden rounded-2xl shadow-lg bg-white"
+            transition={{ duration: 0.6, delay: index * 0.1 }} whileHover={{ scale: 1.05, y: -10 }}
+            className="card group relative overflow-hidden"
         >
             <div className="aspect-square overflow-hidden">
                 <img
@@ -65,10 +64,8 @@ const GalleryItem = ({ image, index }) => {
                         <FaCamera className="text-blue-400" />
                     </div>
                 </div>
-            </div>
-
-            {/* Decorative Corner */}
-            <div className="absolute top-2 right-2 w-8 h-8 bg-coffee-600 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            </div>            {/* Decorative Corner */}
+            <div className="absolute top-2 right-2 w-8 h-8 bg-brand-600 dark:bg-brand-500 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <FaCamera className="text-white text-xs" />
             </div>
         </motion.div>
@@ -122,11 +119,10 @@ const Gallery = () => {
                     <p className="card-subtitle mb-8 max-w-3xl mx-auto">
                         Tag us on social media and share your beautiful coffee moments at Yatra Coffee Shop.
                         We love seeing how our coffee brings joy to your day!
-                    </p>
-                    <div className="flex items-center justify-center gap-6 flex-wrap">
-                        <span className="text-coffee-600 font-semibold text-lg">#YatraCoffee</span>
-                        <span className="text-coffee-600 font-semibold text-lg">#CoffeeLovers</span>
-                        <span className="text-coffee-600 font-semibold text-lg">#ChitwanCoffee</span>
+                    </p>                    <div className="flex items-center justify-center gap-6 flex-wrap">
+                        <span className="text-brand-600 dark:text-brand-400 font-semibold text-lg">#YatraCoffee</span>
+                        <span className="text-brand-600 dark:text-brand-400 font-semibold text-lg">#CoffeeLovers</span>
+                        <span className="text-brand-600 dark:text-brand-400 font-semibold text-lg">#ChitwanCoffee</span>
                     </div>
                 </div>
             </motion.div>

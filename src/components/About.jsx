@@ -5,31 +5,30 @@ import { FaLeaf, FaHeart, FaAward, FaCoffee, FaClock, FaStar, FaUsers, FaShieldA
 const About = () => {
     const [aboutRef, aboutInView] = useInView({ triggerOnce: true });
 
-    const stats = [
-        {
-            icon: FaAward,
-            number: "5+",
-            label: "Years Serving",
-            gradient: "from-coffee-500 to-coffee-700",
-        },
-        {
-            icon: FaCoffee,
-            number: "15+",
-            label: "Coffee Varieties",
-            gradient: "from-gold-500 to-gold-700",
-        },
-        {
-            icon: FaLeaf,
-            number: "100%",
-            label: "Organic Beans",
-            gradient: "from-green-500 to-green-700",
-        },
-        {
-            icon: FaUsers,
-            number: "1000+",
-            label: "Happy Customers",
-            gradient: "from-blue-500 to-blue-700",
-        }
+    const stats = [{
+        icon: FaAward,
+        number: "5+",
+        label: "Years Serving",
+        gradient: "from-brand-500 to-brand-700",
+    },
+    {
+        icon: FaCoffee,
+        number: "15+",
+        label: "Coffee Varieties",
+        gradient: "from-gold-500 to-gold-700",
+    },
+    {
+        icon: FaLeaf,
+        number: "100%",
+        label: "Organic Beans",
+        gradient: "from-emerald-500 to-emerald-700",
+    },
+    {
+        icon: FaUsers,
+        number: "1000+",
+        label: "Happy Customers",
+        gradient: "from-blue-500 to-blue-700",
+    }
     ];
 
     return (
@@ -58,12 +57,11 @@ const About = () => {
                             ease: 'easeInOut',
                             delay: Math.random() * 3,
                         }}
-                    >
-                        {i % 2 === 0 ? (
-                            <FaCoffee className="text-coffee-300 text-3xl" />
-                        ) : (
-                            <FaLeaf className="text-green-300 text-2xl" />
-                        )}
+                    >                        {i % 2 === 0 ? (
+                        <FaCoffee className="text-brand-300 dark:text-brand-400 text-3xl" />
+                    ) : (
+                        <FaLeaf className="text-emerald-300 dark:text-emerald-400 text-2xl" />
+                    )}
                     </motion.div>
                 ))}
             </div>
@@ -118,8 +116,7 @@ const About = () => {
                             </p>
                             <p className="text-lg text-coffee-600 leading-relaxed">
                                 Our beans are carefully selected from sustainable farms across Nepal and around the world, roasted to perfection with artisanal techniques, and brewed with precision to create the perfect cup every time.
-                            </p>
-                            <p className="text-lg text-coffee-600 leading-relaxed">
+                            </p>                            <p className="section-subtitle text-left">
                                 We're passionate about creating a warm, welcoming space where coffee lovers can gather, connect, and create lasting memories over exceptional coffee and delicious treats in the heart of Chitwan.
                             </p>
                         </motion.div>
@@ -142,12 +139,12 @@ const About = () => {
                                     initial={{ opacity: 0, scale: 0.8 }}
                                     animate={aboutInView ? { opacity: 1, scale: 1 } : {}}
                                     transition={{ duration: 0.6, delay: 0.9 + index * 0.1 }}
-                                    className="flex items-center gap-3 bg-white/60 backdrop-blur-sm p-4 rounded-xl border border-coffee-200 shadow-soft"
+                                    className="card flex items-center gap-3 p-4"
                                 >
-                                    <div className="w-8 h-8 bg-gradient-to-br from-coffee-500 to-coffee-700 rounded-lg flex items-center justify-center">
+                                    <div className="icon-container icon-container-primary">
                                         <item.icon className="text-white text-sm" />
                                     </div>
-                                    <span className="text-coffee-700 font-medium text-sm">{item.text}</span>
+                                    <span className="text-neutral-700 dark:text-neutral-300 font-medium text-sm">{item.text}</span>
                                 </motion.div>
                             ))}
                         </motion.div>
@@ -159,20 +156,19 @@ const About = () => {
                             transition={{ duration: 1, delay: 1.0 }}
                             className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10"
                         >
-                            {stats.map((stat, index) => (
-                                <motion.div
-                                    key={index}
-                                    initial={{ opacity: 0, scale: 0.8 }}
-                                    animate={aboutInView ? { opacity: 1, scale: 1 } : {}}
-                                    transition={{ duration: 0.6, delay: 1.1 + index * 0.1 }}
-                                    className="text-center bg-white/80 backdrop-blur-sm p-6 rounded-2xl border border-coffee-200 shadow-soft hover:shadow-lg transition-all duration-300"
-                                >
-                                    <div className={`w-12 h-12 bg-gradient-to-br ${stat.gradient} rounded-2xl flex items-center justify-center mx-auto mb-3 shadow-lg`}>
-                                        <stat.icon className="text-white text-lg" />
-                                    </div>
-                                    <p className="text-3xl font-bold text-coffee-800 mb-1">{stat.number}</p>
-                                    <p className="text-coffee-600 text-sm font-medium">{stat.label}</p>
-                                </motion.div>
+                            {stats.map((stat, index) => (<motion.div
+                                key={index}
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                animate={aboutInView ? { opacity: 1, scale: 1 } : {}}
+                                transition={{ duration: 0.6, delay: 1.1 + index * 0.1 }}
+                                className="card text-center p-6 hover:shadow-brand-lg transition-all duration-300"
+                            >
+                                <div className={`icon-container bg-gradient-to-br ${stat.gradient} mx-auto mb-3`}>
+                                    <stat.icon className="text-white text-lg" />
+                                </div>
+                                <p className="text-3xl font-bold gradient-text mb-1">{stat.number}</p>
+                                <p className="text-neutral-600 dark:text-neutral-400 text-sm font-medium">{stat.label}</p>
+                            </motion.div>
                             ))}
                         </motion.div>
 

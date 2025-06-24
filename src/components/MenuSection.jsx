@@ -32,10 +32,9 @@ const MenuSection = () => {
                             delay: Math.random() * 3,
                             ease: 'easeInOut'
                         }}
-                    >
-                        {i % 3 === 0 && <FaCoffee className="text-coffee-600 text-4xl" />}
-                        {i % 3 === 1 && <FaLeaf className="text-green-600 text-3xl" />}
-                        {i % 3 === 2 && <FaStar className="text-gold-500 text-2xl" />}
+                    >                        {i % 3 === 0 && <FaCoffee className="text-brand-600 dark:text-brand-400 text-4xl" />}
+                        {i % 3 === 1 && <FaLeaf className="text-emerald-600 dark:text-emerald-400 text-3xl" />}
+                        {i % 3 === 2 && <FaStar className="text-gold-500 dark:text-gold-400 text-2xl" />}
                     </motion.div>
                 ))}
             </div>
@@ -90,25 +89,24 @@ const MenuSection = () => {
                         animate={menuInView ? { opacity: 1, y: 0 } : {}}
                         transition={{ duration: 1, delay: 0.8, ease: 'easeOut' }}
                         className="flex flex-wrap justify-center gap-6 mb-12"
-                    >
-                        {[
-                            { icon: FaCoffee, text: "Premium Beans", gradient: "from-coffee-500 to-coffee-700" },
-                            { icon: FaLeaf, text: "100% Organic", gradient: "from-green-500 to-green-700" },
-                            { icon: FaStar, text: "Award Winning", gradient: "from-gold-500 to-gold-700" }
-                        ].map((item, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, scale: 0.8 }}
-                                animate={menuInView ? { opacity: 1, scale: 1 } : {}}
-                                transition={{ duration: 0.6, delay: 0.9 + index * 0.1 }}
-                                className="flex items-center gap-3 bg-white/60 backdrop-blur-sm px-6 py-3 rounded-2xl border border-coffee-200 shadow-soft"
-                            >
-                                <div className={`w-10 h-10 bg-gradient-to-br ${item.gradient} rounded-xl flex items-center justify-center shadow-lg`}>
-                                    <item.icon className="text-white text-sm" />
-                                </div>
-                                <span className="text-coffee-700 font-medium">{item.text}</span>
-                            </motion.div>
-                        ))}
+                    >                        {[
+                        { icon: FaCoffee, text: "Premium Beans", gradient: "from-brand-500 to-brand-700" },
+                        { icon: FaLeaf, text: "100% Organic", gradient: "from-emerald-500 to-emerald-700" },
+                        { icon: FaStar, text: "Award Winning", gradient: "from-gold-500 to-gold-700" }
+                    ].map((item, index) => (
+                        <motion.div
+                            key={index}
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            animate={menuInView ? { opacity: 1, scale: 1 } : {}}
+                            transition={{ duration: 0.6, delay: 0.9 + index * 0.1 }}
+                            className="card flex items-center gap-3 px-6 py-3"
+                        >
+                            <div className={`icon-container bg-gradient-to-br ${item.gradient}`}>
+                                <item.icon className="text-white text-sm" />
+                            </div>
+                            <span className="text-neutral-700 dark:text-neutral-300 font-medium">{item.text}</span>
+                        </motion.div>
+                    ))}
                     </motion.div>
                 </div>
 

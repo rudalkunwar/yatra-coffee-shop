@@ -94,17 +94,6 @@ const Header = () => {
                                 <Sun size={18} />
                             )}
                         </motion.button>
-
-                        <motion.button
-                            className="btn btn-primary"
-                            initial={{ opacity: 0, y: -10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: 0.5 }}
-                            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                        >
-                            <MapPin size={16} className="mr-2" />
-                            Visit Us
-                        </motion.button>
                     </nav>
 
                     {/* Mobile Menu Button & Theme Toggle */}

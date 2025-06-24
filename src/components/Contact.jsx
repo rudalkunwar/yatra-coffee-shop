@@ -30,12 +30,11 @@ const Contact = () => {
                         ease: 'easeInOut',
                         delay: Math.random() * 2,
                     }}
-                >
-                    {i % 2 === 0 ? (
-                        <FaCoffee className="text-coffee-600 text-3xl" />
-                    ) : (
-                        <FaLeaf className="text-green-600 text-2xl" />
-                    )}
+                >                    {i % 2 === 0 ? (
+                    <FaCoffee className="text-brand-600 dark:text-brand-400 text-3xl" />
+                ) : (
+                    <FaLeaf className="text-emerald-600 dark:text-emerald-400 text-2xl" />
+                )}
                 </motion.div>
             ))}
         </div>            <motion.div
@@ -73,13 +72,12 @@ const Contact = () => {
                     <div className="icon-container icon-container-primary mx-auto mb-6">
                         <FaMapMarkerAlt className="text-2xl" />
                     </div>
-                    <h3 className="card-title text-center">Our Location</h3>
-                    <div className="card-subtitle text-center">
+                    <h3 className="card-title text-center">Our Location</h3>                    <div className="card-subtitle text-center">
                         <p className="mb-2">Bharatpur-15, Chitwan<br />Nepal</p>
-                        <span className="text-coffee-500 text-sm font-medium block">Heart of the city, easy to find</span>
+                        <span className="text-brand-500 dark:text-brand-400 text-sm font-medium block">Heart of the city, easy to find</span>
                     </div>
-                    <div className="mt-6 pt-4 border-t border-coffee-100">
-                        <button className="text-coffee-600 hover:text-coffee-800 text-sm font-medium transition-colors">
+                    <div className="mt-6 pt-4 border-t border-neutral-200 dark:border-neutral-700">
+                        <button className="text-brand-600 dark:text-brand-400 hover:text-brand-800 dark:hover:text-brand-300 text-sm font-medium transition-colors">
                             Get Directions →
                         </button>
                     </div>
@@ -93,17 +91,16 @@ const Contact = () => {
                     <div className="icon-container icon-container-secondary mx-auto mb-6">
                         <FaPhone className="text-2xl" />
                     </div>
-                    <h3 className="card-title text-center">Call Us</h3>
-                    <div className="card-subtitle text-center">
+                    <h3 className="card-title text-center">Call Us</h3>                    <div className="card-subtitle text-center">
                         <p className="mb-2">
-                            <a href="tel:+97756000000" className="hover:text-coffee-800 transition-colors">
+                            <a href="tel:+97756000000" className="hover:text-brand-800 dark:hover:text-brand-300 transition-colors">
                                 +977 56-XXXXXX
                             </a>
                         </p>
-                        <span className="text-coffee-500 text-sm font-medium block">Available during business hours</span>
+                        <span className="text-brand-500 dark:text-brand-400 text-sm font-medium block">Available during business hours</span>
                     </div>
-                    <div className="mt-6 pt-4 border-t border-coffee-100">
-                        <button className="text-coffee-600 hover:text-coffee-800 text-sm font-medium transition-colors">
+                    <div className="mt-6 pt-4 border-t border-neutral-200 dark:border-neutral-700">
+                        <button className="text-brand-600 dark:text-brand-400 hover:text-brand-800 dark:hover:text-brand-300 text-sm font-medium transition-colors">
                             Call Now →
                         </button>
                     </div>
@@ -117,17 +114,16 @@ const Contact = () => {
                     <div className="icon-container icon-container-accent mx-auto mb-6">
                         <FaEnvelope className="text-2xl" />
                     </div>
-                    <h3 className="card-title text-center">Email Us</h3>
-                    <div className="card-subtitle text-center">
+                    <h3 className="card-title text-center">Email Us</h3>                    <div className="card-subtitle text-center">
                         <p className="mb-2">
-                            <a href="mailto:hello@yatracoffee.com.np" className="hover:text-coffee-800 transition-colors">
+                            <a href="mailto:hello@yatracoffee.com.np" className="hover:text-brand-800 dark:hover:text-brand-300 transition-colors">
                                 hello@yatracoffee.com.np
                             </a>
                         </p>
-                        <span className="text-coffee-500 text-sm font-medium block">We'd love to hear from you</span>
+                        <span className="text-brand-500 dark:text-brand-400 text-sm font-medium block">We'd love to hear from you</span>
                     </div>
-                    <div className="mt-6 pt-4 border-t border-coffee-100">
-                        <button className="text-coffee-600 hover:text-coffee-800 text-sm font-medium transition-colors">
+                    <div className="mt-6 pt-4 border-t border-neutral-200 dark:border-neutral-700">
+                        <button className="text-brand-600 dark:text-brand-400 hover:text-brand-800 dark:hover:text-brand-300 text-sm font-medium transition-colors">
                             Send Email →
                         </button>
                     </div>
@@ -137,14 +133,13 @@ const Contact = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={contactInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8, delay: 0.5 }} className="gradient-card text-center"
-            >
-                <div className="flex items-center justify-center gap-4 mb-10">
-                    <div className="icon-container bg-gradient-to-br from-orange-500 to-orange-700 shadow-lg">
+            >                <div className="flex items-center justify-center gap-4 mb-10">
+                    <div className="icon-container bg-gradient-to-br from-brand-500 to-brand-700">
                         <FaClock className="text-white text-2xl" />
                     </div>
-                    <h3 className="text-4xl font-serif font-bold text-coffee-800">Opening Hours</h3>
+                    <h3 className="card-title text-4xl">Opening Hours</h3>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-coffee-600">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-neutral-600 dark:text-neutral-400">
                     <motion.div
                         initial={{ opacity: 0, y: 10 }}
                         animate={contactInView ? { opacity: 1, y: 0 } : {}}
@@ -195,7 +190,7 @@ const Contact = () => {
                 >
                     <p className="text-coffee-600 mb-4">Can't wait to visit us?</p>                        <button
                         className="btn btn-primary text-lg"
-                        onClick={() => window.open('https://maps.google.com', '_blank')}
+                        onClick={() => window.open('https://maps.app.goo.gl/dYgBt5i2z8VkJe696', '_blank')}
                     >
                         <FaMapMarkerAlt className="mr-2" />
                         Find Us on Map
