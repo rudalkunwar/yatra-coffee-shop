@@ -3,12 +3,11 @@ import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 
 const Header = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-    const navItems = [
+    const [isMenuOpen, setIsMenuOpen] = useState(false); const navItems = [
         { name: 'Home', href: '#' },
         { name: 'Menu', href: '#menu' },
         { name: 'About', href: '#about' },
+        { name: 'Gallery', href: '#gallery' },
         { name: 'Contact', href: '#contact' },
     ];
 
@@ -40,14 +39,14 @@ const Header = () => {
                             >
                                 {item.name}
                             </motion.a>
-                        ))}
-                        <motion.button
+                        ))}                        <motion.button
                             className="btn btn-primary"
                             initial={{ opacity: 0, y: -10 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 0.4 }}
+                            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                         >
-                            Order Now
+                            Visit Us
                         </motion.button>
                     </nav>
 
@@ -79,7 +78,15 @@ const Header = () => {
                                     {item.name}
                                 </a>
                             ))}
-                            <button className="btn btn-primary w-full">Order Now</button>
+                            <button
+                                className="btn btn-primary w-full"
+                                onClick={() => {
+                                    setIsMenuOpen(false);
+                                    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                                }}
+                            >
+                                Visit Us
+                            </button>
                         </nav>
                     </motion.div>
                 )}

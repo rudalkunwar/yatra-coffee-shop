@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -12,6 +12,23 @@
   body {
     @apply bg-cream text-coffee-900 font-sans;
   }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-cream;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-coffee-400 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-coffee-600;
+  }
 }
 
 @layer components {
@@ -20,11 +37,11 @@
   }
   
   .btn {
-    @apply px-6 py-3 rounded-lg font-medium transition-all duration-300;
+    @apply px-6 py-3 rounded-xl font-medium transition-all duration-300 shadow-md hover:shadow-lg;
   }
   
   .btn-primary {
-    @apply bg-coffee-600 text-white hover:bg-coffee-700;
+    @apply bg-coffee-600 text-white hover:bg-coffee-700 hover:shadow-coffee-600/25;
   }
   
   .section-title {
@@ -32,6 +49,46 @@
   }
   
   .section-subtitle {
-    @apply text-lg text-coffee-600 mb-12 max-w-2xl mx-auto;
+    @apply text-lg text-coffee-600 mb-12 max-w-2xl mx-auto leading-relaxed;
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-coffee-600 to-coffee-800 bg-clip-text text-transparent;
+  }
+
+  /* Glass morphism effect */
+  .glass {
+    @apply backdrop-blur-md bg-white/10 border border-white/20;
+  }
+
+  /* Floating animation */
+  .float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  /* Coffee steam animation */
+  .steam {
+    animation: steam 4s ease-in-out infinite;
+  }
+
+  @keyframes steam {
+    0%, 100% {
+      transform: translateY(0px) scaleY(1);
+      opacity: 0.6;
+    }
+    50% {
+      transform: translateY(-10px) scaleY(1.1);
+      opacity: 0.8;
+    }
   }
 }
