@@ -6,7 +6,7 @@ const Hero = () => {
     const [heroRef, heroInView] = useInView({ triggerOnce: true });
 
     return (
-        <section className="relative h-[200vh] flex items-center justify-center overflow-hidden">
+        <section className="relative md:h-[200vh] flex items-center justify-center overflow-hidden">
             {/* Ultra Modern Background */}
             <div className="absolute inset-0">
                 {/* Optimized Background with Reduced Animation */}
